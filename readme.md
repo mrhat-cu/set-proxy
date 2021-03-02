@@ -7,6 +7,7 @@ Eres libre de usar y modificar el código acorde a tus necesidades.
 Aviso: Las contraseñas se guardan en archivos de texto plano.
 
 ##English Version##
+
 A simple bash script to quickly change proxy settings on debian based systems. Useful when you are connected to a network where you can only browse using a proxy such as your work or school.
 
 Until now it allows changing the configuration for the system (environment), the apt package manager, curl and git.
