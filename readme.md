@@ -6,7 +6,7 @@ Hasta el momento permite cambiar la configuración para el sistema (environment)
 
 Eres libre de usar y modificar el código acorde a tus necesidades.
 
-**Aviso:** Las contraseñas se guardan en archivos de texto plano.
+**Aviso:** Las contraseñas se guardan en archivos de texto plano. Asi es como Linux guarda las configuraciones para algunos progamas, no un fallo en el script.
 
 ## English Version
 
@@ -16,4 +16,4 @@ Until now it allows changing the configuration for the system (environment), the
 
 Feel free to use and modify the code according to your needs.
 
-**Notice:** Passwords are stored in plain text files.
+**Notice:** Passwords are stored in plain text files. This is how Linux save the config for some programs, not a bug on the  script.
