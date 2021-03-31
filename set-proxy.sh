@@ -119,7 +119,7 @@ set_environment(){
 		sleep 0.5
 		echo -e "${blueColour}[i]${endColour} Listo."
 	elif [[ "$auth" = n ]]; then
-		if[ ! -f /etc/enviroment.backup ]; then
+		if [ ! -f /etc/enviroment.backup ]; then
 			echo -e "${blueColour}[i]${endColour} Creando un backup de /etc/environment... "
 			cp /etc/environment /etc/environment.backup
 			sleep 0.5
