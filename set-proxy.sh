@@ -64,6 +64,7 @@ get_info (){
 		clear
 		echo -ne "${yellowColour}[?]${endColour} Nombre de usuario: " && read -r user
 		hide_pass
+		printf "\n"
 		echo -ne "${yellowColour}[?]${endColour} Servidor proxy: " && read -r proxy
 		echo -ne "${yellowColour}[?]${endColour} Puerto: " && read -r puerto
 	elif [[ "$auth" = n ]]; then
