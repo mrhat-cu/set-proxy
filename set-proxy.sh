@@ -219,7 +219,7 @@ until [[ "$option" = 0 ]]; do
 			fi
 		fi
 		if [ -f /etc/environment.backup ]; then
-			echo "Reestableciendo proxy del sistema..."
+			echo "${blueColour}[i]${endColour} Reestableciendo proxy del sistema..."
 			if ! [ $(id -u) = 0 ]; then
         		echo -e "${redColour}[!] ${endColour}$programa Necesita permisos de root para cambiar esta configuración"
 			else
@@ -230,15 +230,20 @@ until [[ "$option" = 0 ]]; do
 				sleep 1
 			fi
 		fi
-		echo "Reestableciendo Curl..."
+		echo "${blueColour}[i]${endColour} Reestableciendo Curl..."
 		rm $HOME/.curlrc
 		sleep 0.5
 		echo -e "${blueColour}[i]${endColour} Listo"
 		sleep 1
-		echo "Reestableciendo Git..."
-		rm $HOME/.gitconfig
-		sleep 0.5
-		echo -e "${blueColour}[i]${endColour} Listo"
+		echo -e "${blueColour}[i]${endColour} Reestableciendo Git..."
+		if [ "$(command -v git)" ]; then
+			rm $HOME/.gitconfig
+			sleep 0.5
+			echo -e "${blueColour}[i]${endColour} Listo"
+		else
+			echo -e "${redColour}[x]${endColour} Git no está instalado"
+			sleep 1
+		fi
 		sleep 1
 		echo -e "\n${blueColour}[i]${endColour} Se ha reestablecido la configuración, presione cualquier tecla para continuar " && read -p
 		clear
