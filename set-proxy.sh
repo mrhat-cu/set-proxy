@@ -209,7 +209,7 @@ until [[ "$option" = 0 ]]; do
 		if [ -f /etc/apt/apt.conf.d/proxy.conf ]; then
 			echo -e "${blueColour}[i]${endColour} Reestableciendo apt... "
 			if ! [ $(id -u) = 0 ]; then
-        	echo -e "${redColour}[!] ${endColour}$programa Necesita permisos de root para cambiar esta configuración"
+        	echo -e "${redColour}[!]${endColour}$programa Necesita permisos de root para cambiar esta configuración"
         	sleep 0.5
 			else
 				rm /etc/apt/apt.conf.d/proxy.conf
@@ -219,9 +219,9 @@ until [[ "$option" = 0 ]]; do
 			fi
 		fi
 		if [ -f /etc/environment.backup ]; then
-			echo "${blueColour}[i]${endColour} Reestableciendo proxy del sistema..."
+			echo -e "${blueColour}[i]${endColour} Reestableciendo proxy del sistema..."
 			if ! [ $(id -u) = 0 ]; then
-        		echo -e "${redColour}[!] ${endColour}$programa Necesita permisos de root para cambiar esta configuración"
+        		echo -e "${redColour}[!]${endColour}$programa Necesita permisos de root para cambiar esta configuración"
 			else
 				rm /etc/environment
 				mv /etc/environment.backup /etc/environment
@@ -230,7 +230,7 @@ until [[ "$option" = 0 ]]; do
 				sleep 1
 			fi
 		fi
-		echo "${blueColour}[i]${endColour} Reestableciendo Curl..."
+		echo -e "${blueColour}[i]${endColour} Reestableciendo Curl..."
 		rm $HOME/.curlrc
 		sleep 0.5
 		echo -e "${blueColour}[i]${endColour} Listo"
@@ -245,7 +245,8 @@ until [[ "$option" = 0 ]]; do
 			sleep 1
 		fi
 		sleep 1
-		echo -e "\n${blueColour}[i]${endColour} Se ha reestablecido la configuración, presione cualquier tecla para continuar " && read -p
+		echo -e "\n${blueColour}[i]${endColour} Se ha reestablecido la configuración"
+		sleep 3
 		clear
 		show_options
 	else
